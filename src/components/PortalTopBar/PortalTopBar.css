@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #1E3738;
+    --secondary-color: #F6FBF6;
+    --tertiary-color: #5C5C5C;
+    --tertiary-color-50: rgba(92, 92, 92,0.5);
+    --primary-light: #FFFFFF;
+    --secondary-dark: #101010;
+    }
+
+.portal-top-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 6px 12px ;
+    border: 2px solid var(--tertiary-color-50);
+}
+
+.portal-top-profile{
+    display: flex;
+    align-items: center;
+}
+
+.portal-top-profile .profile {
+    border-radius: 50%;
+    margin-right: 12px;
+    padding: 6px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}

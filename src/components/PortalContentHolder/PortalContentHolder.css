@@ -1,0 +1,9 @@
+
+.PortalContentHolder{
+    border-radius: 15px;
+    background-color: #fff;
+    border: 2px solid rgba(30, 55, 56,0.5);
+    padding: 0 16px;
+    padding-bottom: 24px;
+    /* width: 500px; */
+}
