@@ -1,0 +1,42 @@
+
+
+.paymentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(30, 55, 56, 0.75);
+
+    
+}
+
+.payBorderContainer{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+    padding: 16px;
+    height: 526px;
+    border: 1px solid rgba(30, 55, 56, 0.5);
+
+}
+
+.payPrice {
+    border-radius: 16px;
+    background-color: #1e3738;
+    color: #fff;
+}
+
+
+.paymentForm form{
+    display: flex;
+    flex-direction: column;
+}
+
+.paymentForm input{
+    border-radius: 8px;
+    border: 1px solid rgba(30, 55, 56, 0.5);
+    padding: 8px ;
+}

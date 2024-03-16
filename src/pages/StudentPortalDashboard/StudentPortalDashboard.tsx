@@ -3,14 +3,15 @@ import PortalSidebar from "../../components/PortalSidebar/PortalSidebar";
 import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
 
 import "./StudentPortal.css";
+import "../PagesGlobal.css";
 
 const StudentPortalDashboard = () => {
   return (
     <>
-      <div className="student-portal-dashboard">
+      <div className="d-flex">
         <PortalSidebar />
 
-        <div className="student-dashboard-body ">
+        <div className="pages-content-body">
           <PortalTopBar />
           <div className="student-dashboard-content ">
             <div className="big-content sdc-spacing ">
@@ -37,11 +38,11 @@ const StudentPortalDashboard = () => {
 
                 <div className="info-card ">
                   <div className="info-card-item ">
-                    <span className="light-text">Application</span>
+                    <span className="light-text">Application Status</span>
                     <span>Assigned</span>
                   </div>
                   <div className="info-card-item ">
-                    <span className="light-text">Date</span>
+                    <span className="light-text">Application Date</span>
                     <span>08-Jan-2024</span>
                   </div>
                 </div>

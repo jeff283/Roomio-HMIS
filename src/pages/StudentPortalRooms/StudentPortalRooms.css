@@ -1,0 +1,75 @@
+
+
+  
+.rooms-content-section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.rooms-content-section .rooms-details  {
+    flex: 1;
+    padding: 8px 16px;
+    margin-bottom: 24px;
+    border-radius: 30px;
+    border: 2px solid #1e373880;
+    padding-right: 10%;
+    padding-left: 24px;
+}
+
+.rooms-content-section .rooms-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.room-all-features .room-feature{
+    font-size: 20px;
+}
+
+
+
+.room-desc .room-name{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.room-pricing{
+    display: flex;
+    align-items: center;
+}
+
+.room-pricing .room-price{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.room-pricing .room-price-period{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.room-desc .room-desc-info{
+    font-size: 24px;
+    color: #5C5C5C;
+    padding: 8px 0;
+}
+
+.room-cta-btn{
+    width: 170px;
+}
+
+.student-portal-rooms-page{
+    position: relative;
+}
+
+.payingProcess{
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    z-index: 1;
+    width: 100vw;
+    
+}
+
+.student-portal-rooms-page-bg{
+    position: relative;
+}

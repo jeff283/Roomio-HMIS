@@ -95,7 +95,7 @@ body {
   --tertiary-color: #5C5C5C;
   --primary-light: #FFFFFF;
   --secondary-dark: #101010;
-  --light-border: rgba(30, 55, 56, 0.502);
+  --light-border: #1e373880;
   }
 
 .light-text {
@@ -108,4 +108,8 @@ body {
 
 .light-border{
   color: var(--light-border);
+}
+
+.tac {
+  text-align: center;
 }

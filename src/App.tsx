@@ -1,11 +1,12 @@
 import "./App.css";
-import StudentPortalDashboard from "./pages/StudentPortalDashboard/StudentPortalDashboard";
+// import StudentPortalDashboard from "./pages/StudentPortalDashboard/StudentPortalDashboard";
+import StudentPortalRooms from "./pages/StudentPortalRooms/StudentPortalRooms";
 
 function App() {
   return (
     <>
-      <StudentPortalDashboard />
-      {/* <h1 className="">Welcome to Roomio</h1> */}
+      {/* <StudentPortalDashboard /> */}
+      <StudentPortalRooms />
     </>
   );
 }
