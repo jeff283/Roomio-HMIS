@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import { FaDoorOpen } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import "./PortalSidebar.css";
@@ -9,24 +11,35 @@ const PortalSidebar = () => {
     <>
       <div className="portal-sidebar-container ">
         <div className="portal-sidebar-logo">
-          <a href="/">
+          <NavLink to="/student-portal/dashboard">
             <img src={RoomioDarkLogo} alt="Logo" />
-          </a>
+          </NavLink>
         </div>
 
         <div className="portal-sidemenu-items">
-          <div className="portal-sidemenu-links portal-active-menu">
-            <a href="#">
-              <MdDashboard size="48" />
-              <span className="fz32 portal-sidemenu-text">Dashboard</span>
-            </a>
-          </div>
-          <div className="portal-sidemenu-links">
-            <a href="#">
-              <FaDoorOpen size="48" />
-              <span className="fz32 portal-sidemenu-text">Rooms</span>
-            </a>
-          </div>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? "portal-sidemenu-links portal-active-menu"
+                : "portal-sidemenu-links";
+            }}
+            to="/student-portal/dashboard"
+          >
+            <MdDashboard size="48" />
+            <span className="fz32 portal-sidemenu-text">Dashboard</span>
+          </NavLink>
+
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? "portal-sidemenu-links portal-active-menu"
+                : "portal-sidemenu-links";
+            }}
+            to="/student-portal/rooms"
+          >
+            <FaDoorOpen size="48" />
+            <span className="fz32 portal-sidemenu-text">Rooms</span>
+          </NavLink>
         </div>
       </div>
     </>

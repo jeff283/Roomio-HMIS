@@ -1,12 +1,11 @@
 import "./App.css";
-// import StudentPortalDashboard from "./pages/StudentPortalDashboard/StudentPortalDashboard";
-import StudentPortalRooms from "./pages/StudentPortalRooms/StudentPortalRooms";
+import { RouterProvider } from "react-router-dom";
+import Router from "./Routes";
 
 function App() {
   return (
     <>
-      {/* <StudentPortalDashboard /> */}
-      <StudentPortalRooms />
+      <RouterProvider router={Router} />
     </>
   );
 }

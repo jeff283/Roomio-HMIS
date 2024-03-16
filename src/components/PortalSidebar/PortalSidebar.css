@@ -31,18 +31,18 @@
     margin-bottom: 64px;
     padding: 8px;
     border-radius: 15px;
-}
-
-.portal-sidemenu-links a{
     text-decoration: none;
     color: var(--primary-light);
+    border: 2px solid var(--primary-color);
+
 }
 
-.portal-sidemenu-links:hover,
-.portal-sidemenu-links a:hover {
+
+.portal-sidemenu-links:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
+
 
 
 .portal-sidemenu-text{
