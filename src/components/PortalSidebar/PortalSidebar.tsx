@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { ReactNode } from "react";
 
-import { FaDoorOpen } from "react-icons/fa";
-import { MdDashboard } from "react-icons/md";
 import "./PortalSidebar.css";
 
 import RoomioDarkLogo from "../../assets/SVGs/RoomioDarkLogo.svg";

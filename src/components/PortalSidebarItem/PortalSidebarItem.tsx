@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { IconType } from "react-icons";
 import { NavLink } from "react-router-dom";
 
 interface Props {
