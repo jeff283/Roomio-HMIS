@@ -1,0 +1,42 @@
+
+.table-content-display{
+    border: 1px solid #1e373880;
+    border-radius: 24px;
+    height: 700px;
+    padding: 16px;
+}
+
+.table-container{
+    max-height: 700px;
+    overflow-y: scroll;
+    border-right: none;
+
+}
+
+
+
+.table-title {
+    top: 0;
+    position: sticky;
+}
+
+tbody tr{
+    cursor: pointer;
+}
+
+.no-table-data{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-table-data-title{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.no-table-data-sub-title{
+    font-size: 32px;
+}

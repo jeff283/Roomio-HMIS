@@ -1,0 +1,17 @@
+
+.admin-portal-list-body{
+    position: relative;
+}
+
+.admin-portal-form{
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    z-index: 1;
+    width: 100vw;
+    
+}
+
+.admin-portal-list-body-content{
+    position: relative;
+}

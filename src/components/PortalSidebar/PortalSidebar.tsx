@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { ReactNode } from "react";
 
 import { FaDoorOpen } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
@@ -6,7 +7,11 @@ import "./PortalSidebar.css";
 
 import RoomioDarkLogo from "../../assets/SVGs/RoomioDarkLogo.svg";
 
-const PortalSidebar = () => {
+interface Props {
+  children: ReactNode;
+}
+
+const PortalSidebar = ({ children }: Props) => {
   return (
     <>
       <div className="portal-sidebar-container ">
@@ -17,7 +22,8 @@ const PortalSidebar = () => {
         </div>
 
         <div className="portal-sidemenu-items">
-          <NavLink
+          {children}
+          {/* <NavLink
             className={({ isActive }) => {
               return isActive
                 ? "portal-sidemenu-links portal-active-menu"
@@ -39,7 +45,7 @@ const PortalSidebar = () => {
           >
             <FaDoorOpen size="48" />
             <span className="fz32 portal-sidemenu-text">Rooms</span>
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </>

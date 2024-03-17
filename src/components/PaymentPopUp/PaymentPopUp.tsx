@@ -30,10 +30,9 @@ const PaymentPopUp = ({ onClickPay }: Props) => {
 
           <div className="paymentForm">
             <form>
-              <label htmlFor="refNo">Payment Reference:</label>
+              <label htmlFor="refNO">Payment Reference:</label>
               <input
                 type="text"
-                name="refNo"
                 id="refNO"
                 placeholder="Payment Reference Number"
                 required

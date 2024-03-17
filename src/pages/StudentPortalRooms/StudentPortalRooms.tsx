@@ -1,4 +1,3 @@
-import PortalSidebar from "../../components/PortalSidebar/PortalSidebar";
 import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
 import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
 
@@ -8,6 +7,7 @@ import "./StudentPortalRooms.css";
 import "../PagesGlobal.css";
 import PaymentPopUp from "../../components/PaymentPopUp/PaymentPopUp";
 import { useState } from "react";
+import StudentPortalSidebar from "../../components/StudentPortalSidebar/StudentPortalSidebar";
 
 const StudentPortalRooms = () => {
   const [pay, setPay] = useState(false);
@@ -19,10 +19,10 @@ const StudentPortalRooms = () => {
     <>
       <div className="student-portal-rooms-page">
         <div className="d-flex student-portal-rooms-page-bg">
-          <PortalSidebar />
+          <StudentPortalSidebar />
 
           <div className="pages-content-body">
-            <PortalTopBar />
+            <PortalTopBar pageTitle="Rooms" />
 
             <div className="pages-content-section  ">
               <div className="rooms-content-section ">

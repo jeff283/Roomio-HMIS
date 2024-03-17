@@ -1,18 +1,17 @@
 // import PortalContentHolder from "../../components/PortalContentHolder/PortalContentHolder";
-import PortalSidebar from "../../components/PortalSidebar/PortalSidebar";
-import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
-
 import "./StudentPortal.css";
 import "../PagesGlobal.css";
+
+import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
+import StudentPortalSidebar from "../../components/StudentPortalSidebar/StudentPortalSidebar";
 
 const StudentPortalDashboard = () => {
   return (
     <>
       <div className="d-flex">
-        <PortalSidebar />
-
+        <StudentPortalSidebar />
         <div className="pages-content-body">
-          <PortalTopBar />
+          <PortalTopBar pageTitle="Dashboard" />
           <div className="student-dashboard-content ">
             <div className="big-content sdc-spacing ">
               <div className="top-content content-card ">

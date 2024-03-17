@@ -1,0 +1,58 @@
+.table-add-form-container{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgba(30, 55, 56, 0.75);
+    height: 100vh;
+}
+
+.off-click {
+    height: 100%;
+    width: 70%;
+}
+
+.table-add-form{
+    background-color: #fff;
+    padding: 64px 32px;
+    padding-right: 72px;
+
+    width: 600px;
+    border-radius: 32px  0 0 32px;
+    border: 1px solid #1e373880;
+
+}
+
+
+.submit-btn{
+    font-size: 24px;
+    font-weight: 500;
+    border: 2px solid #1E3738;
+    border-radius: 8px;
+    padding: 4px 8px ;
+    background-color: #fff;
+    /* width: 100%; */
+    color: #fff;
+    background-color: #1E3738;
+}
+
+
+
+.submit-btn:hover{
+    background-color: #fff;
+    color: #1E3738;
+    border: 2px solid #1E3738;
+}
+
+.table-add-form label{
+    font-size: 24px;
+    font-weight: 500;
+    /* color: #1e373880; */
+}
+
+.table-add-form input, 
+.table-add-form select {
+    font-size: 24px;
+    border: none;
+    border-radius: 0;
+    border-bottom:  2px solid #1e373880;
+}
