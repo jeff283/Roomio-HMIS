@@ -1,25 +1,26 @@
 import { useForm, FieldValues } from "react-hook-form";
 import "./TableAddForm.css";
-import Student from "../../Interfaces/Student";
+import User from "../../Interfaces/User";
 
 interface Props {
-  studentData?: Student;
+  userData?: User;
   onFormSubmit: () => void;
   onOffClick: () => void;
 }
 
-const emptyStudentData: Student = {
+const emptyuserData: User = {
   id: "",
   name: "",
   admNo: "",
   phone: "",
   email: "",
   gender: "",
+  isAdmin: false,
 };
 const TableAddStudentForm = ({
   onOffClick,
   onFormSubmit,
-  studentData = emptyStudentData,
+  userData = emptyuserData,
 }: Props) => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -40,7 +41,7 @@ const TableAddStudentForm = ({
             </label>
             <input
               {...register("name")}
-              value={studentData.name}
+              value={userData.name}
               id="name"
               className="form-control"
               type="text"
@@ -53,8 +54,21 @@ const TableAddStudentForm = ({
             </label>
             <input
               {...register("admNo")}
-              value={studentData.admNo}
+              value={userData.admNo}
               id="admNo"
+              className="form-control"
+              type="text"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label" htmlFor="roomId">
+              Room ID
+            </label>
+            <input
+              {...register("roomId")}
+              value={userData.roomId}
+              id="roomId"
               className="form-control"
               type="text"
               required
@@ -66,7 +80,7 @@ const TableAddStudentForm = ({
             </label>
             <input
               {...register("phone")}
-              value={studentData.phone}
+              value={userData.phone}
               id="phone"
               className="form-control"
               type="text"
@@ -79,7 +93,7 @@ const TableAddStudentForm = ({
             </label>
             <input
               {...register("email")}
-              value={studentData.email}
+              value={userData.email}
               id="email"
               className="form-control"
               type="email"
@@ -92,10 +106,10 @@ const TableAddStudentForm = ({
             </label>
             <select {...register("gender")} id="gender" className="form-select">
               <option value=""></option>
-              <option value="male" selected={studentData.gender == "Male"}>
+              <option value="Male" selected={userData.gender == "Male"}>
                 Male
               </option>
-              <option value="female" selected={studentData.gender == "Female"}>
+              <option value="Female" selected={userData.gender == "Female"}>
                 Female
               </option>
             </select>

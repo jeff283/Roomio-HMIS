@@ -14,6 +14,8 @@ const emptyUserData: User = {
   phone: "",
   email: "",
   gender: "",
+  admNo: "",
+  roomId: "",
   isAdmin: false,
 };
 const TableAddUserForm = ({
@@ -82,10 +84,10 @@ const TableAddUserForm = ({
             </label>
             <select {...register("gender")} id="gender" className="form-select">
               <option value=""></option>
-              <option value="male" selected={userData.gender == "male"}>
+              <option value="Male" selected={userData.gender == "Male"}>
                 Male
               </option>
-              <option value="female" selected={userData.gender == "female"}>
+              <option value="Female" selected={userData.gender == "Female"}>
                 Female
               </option>
             </select>

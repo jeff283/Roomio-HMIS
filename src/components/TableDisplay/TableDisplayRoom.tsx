@@ -31,7 +31,7 @@ const TableDisplayRoom = ({ roomsData, onListDblClick }: Props) => {
               {roomsData.map((room) => (
                 <tr onDoubleClick={() => handleDblClick(room)} key={room.id}>
                   <td>{room.id}</td>
-                  <td>{room.type}</td>
+                  <td>{room.roomType}</td>
                   <td>{room.capacity}</td>
                   <td>{room.size}</td>
                   <td>{room.bedType}</td>

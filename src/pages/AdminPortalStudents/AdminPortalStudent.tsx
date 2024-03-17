@@ -7,17 +7,18 @@ import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
 import TableDisplayStudent from "../../components/TableDisplay/TableDisplayStudent";
 import TableAddStudentForm from "../../components/TableAddForm/TableAddStudentForm";
 import { useState } from "react";
-import Student from "../../Interfaces/Student";
-import studentData from "../../data/studentData";
+
+import User from "../../Interfaces/User";
+import userData from "../../data/userData";
 
 const AdminPortalStudents = () => {
   const [isFormSubmit, setFormSubmit] = useState(false);
-  const [student, setStudent] = useState<Student>({} as Student);
+  const [user, setUser] = useState<User>({} as User);
 
-  const handleListDblClick = (student: Student) => {
-    setStudent(student);
+  const handleListDblClick = (user: User) => {
+    setUser(user);
     setFormSubmit(true);
-    console.log(student);
+    console.log(user);
   };
   return (
     <>
@@ -34,8 +35,8 @@ const AdminPortalStudents = () => {
             </div>
             <div className="admin-table">
               <TableDisplayStudent
-                studentsData={studentData}
-                onListDblClick={(student) => handleListDblClick(student)}
+                usersData={userData}
+                onListDblClick={(user) => handleListDblClick(user)}
               />
             </div>
           </div>
@@ -45,13 +46,13 @@ const AdminPortalStudents = () => {
             <TableAddStudentForm
               onOffClick={() => {
                 setFormSubmit(false);
-                setStudent({} as Student);
+                setUser({} as User);
               }}
               onFormSubmit={() => {
                 setFormSubmit(false);
-                setStudent({} as Student);
+                setUser({} as User);
               }}
-              studentData={student}
+              userData={user}
             />
           </div>
         )}

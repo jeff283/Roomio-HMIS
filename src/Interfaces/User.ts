@@ -5,6 +5,9 @@ interface User {
     email: string;
     gender: string;
     isAdmin:boolean;
+    admNo:string;
+    roomId?:string;
+
 }
 
 export default User;

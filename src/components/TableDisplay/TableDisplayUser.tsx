@@ -18,23 +18,23 @@ const TableDisplayUser = ({ usersData, onListDblClick }: Props) => {
           <table className="table table-hover">
             <thead className="table-title">
               <tr>
-                <th scope="col">User ID</th>
+                <th scope="col">Role</th>
                 <th scope="col">Name</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
                 <th scope="col">Gender</th>
-                <th scope="col">Admin</th>
+                <th scope="col">User ID</th>
               </tr>
             </thead>
             <tbody>
               {usersData.map((user) => (
                 <tr onDoubleClick={() => handleDblClick(user)} key={user.id}>
-                  <td>{user.id}</td>
+                  <td>{user.isAdmin ? "Admin" : "Student"}</td>
                   <td>{user.name}</td>
                   <td>{user.phone}</td>
                   <td>{user.email}</td>
                   <td>{user.gender}</td>
-                  <td>{user.isAdmin ? "True" : "False"}</td>
+                  <td>{user.id}</td>
                 </tr>
               ))}
             </tbody>

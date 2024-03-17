@@ -10,7 +10,7 @@ interface Props {
 
 const emptyRoomData: Room = {
   id: "",
-  type: "",
+  roomType: "",
   capacity: 0,
   size: 0,
   bedType: "",
@@ -40,9 +40,9 @@ const TableAddRoomForm = ({
               Room Type
             </label>
             <input
-              {...register("type")}
-              value={roomData.type}
-              id="type"
+              {...register("roomType")}
+              value={roomData.roomType}
+              id="roomType"
               className="form-control"
               type="text"
               required
