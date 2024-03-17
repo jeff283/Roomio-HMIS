@@ -82,10 +82,10 @@ const TableAddUserForm = ({
             </label>
             <select {...register("gender")} id="gender" className="form-select">
               <option value=""></option>
-              <option value="male" selected={userData.gender == "Male"}>
+              <option value="male" selected={userData.gender == "male"}>
                 Male
               </option>
-              <option value="female" selected={userData.gender == "Female"}>
+              <option value="female" selected={userData.gender == "female"}>
                 Female
               </option>
             </select>
