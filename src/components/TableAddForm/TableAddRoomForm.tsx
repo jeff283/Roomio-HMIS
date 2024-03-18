@@ -4,7 +4,7 @@ import Room from "../../Interfaces/Room";
 
 interface Props {
   roomData?: Room;
-  onFormSubmit: () => void;
+  onFormSubmit: (room: Room) => void;
   onOffClick: () => void;
 }
 
@@ -25,10 +25,33 @@ const TableAddRoomForm = ({
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data: FieldValues) => {
-    onFormSubmit();
-    console.log("Form Submit:");
-    console.log(data);
-    reset();
+    const roomTemplateData: Room = {
+      roomType: data.roomType,
+      capacity: parseInt(data.capacity),
+      size: parseInt(data.size),
+      bedType: data.bedType,
+      gender: data.gender,
+      price: parseInt(data.price),
+    };
+
+    const updateRoomData = Object.keys(roomData).length;
+    let roomDataFull: Room;
+    if (updateRoomData != 0) {
+      roomDataFull = {
+        ...roomTemplateData,
+        occupants: roomData?.occupants || [],
+        id: roomData.id,
+      };
+    } else {
+      roomDataFull = {
+        ...roomTemplateData,
+        occupants: [],
+      };
+    }
+    onFormSubmit(roomDataFull);
+
+    // console.log(roomDataFull);
+    reset(data);
   };
   return (
     <div>
@@ -114,10 +137,10 @@ const TableAddRoomForm = ({
             </label>
             <select {...register("gender")} id="gender" className="form-select">
               <option value=""></option>
-              <option value="male" selected={roomData.gender == "Male"}>
+              <option value="Male" selected={roomData.gender == "Male"}>
                 Male
               </option>
-              <option value="female" selected={roomData.gender == "Female"}>
+              <option value="Female" selected={roomData.gender == "Female"}>
                 Female
               </option>
             </select>

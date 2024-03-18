@@ -8,9 +8,11 @@ import AdminPortalDashboard from "./pages/AdminPortalDashboard/AdminPortalDashbo
 import AdminPortalRooms from "./pages/AdminPortalRooms/AdminPortalRooms";
 import AdminPortalStudents from "./pages/AdminPortalStudents/AdminPortalStudent";
 import AdminPortalUsers from "./pages/AdminPortalUsers/AdminPortalUsers";
+import SignUp from "./pages/SignUp/SignUp";
 
 const Router = createBrowserRouter([
   { path: "/", element: <HomePage />, errorElement: <ErrorPage /> },
+  { path: "/signup", element: <SignUp /> },
   { path: "/student-portal/dashboard", element: <StudentPortalDashboard /> },
   { path: "/student-portal/rooms", element: <StudentPortalRooms /> },
   { path: "/admin-portal/dashboard", element: <AdminPortalDashboard /> },
