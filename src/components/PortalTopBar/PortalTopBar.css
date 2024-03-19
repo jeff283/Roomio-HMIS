@@ -19,6 +19,7 @@
 .portal-top-profile{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .portal-top-profile .profile {

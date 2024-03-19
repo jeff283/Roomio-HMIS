@@ -1,10 +1,10 @@
-import "./SignUp.css";
-import AuthFormSignUp from "../../components/AuthForm/AuthFormSignUp";
+import "./Login.css";
 import { NavLink } from "react-router-dom";
 import RoomioDarkLogo from "../../assets/SVGs/RoomioDarkLogo.svg";
 import AuthPageImg from "../../assets/images/AuthPageImg.png";
+import AuthFormLoginUp from "../../components/AuthForm/AuthFormLoginUp";
 
-const SignUp = () => {
+const Login = () => {
   return (
     <>
       <div className="auth-body-content">
@@ -33,11 +33,11 @@ const SignUp = () => {
         </div>
 
         <div className="auth-body-panel ">
-          <AuthFormSignUp />
+          <AuthFormLoginUp />
         </div>
       </div>
     </>
   );
 };
 
-export default SignUp;
+export default Login;

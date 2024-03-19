@@ -1,0 +1,78 @@
+/* CSS Variables */
+:root {
+    --primary-color: #1E3738;
+    --secondary-color: #F6FBF6;
+    --tertiary-color: #5C5C5C;
+    --primary-light: #FFFFFF;
+    --secondary-dark: #101010;
+    --light-border: #1e373880;
+    }
+  
+
+
+.auth-body-content{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-side-panel{
+    height: 100vh;
+    padding: 48px 72px;
+    width: 31%;
+    background-color: var(--primary-color);
+    color: var(--primary-light);
+    border-radius: 0px 30px 30px 0px;
+}
+
+.auth-body-panel{
+    padding: 48px 72px;
+    padding-right: 12rem;
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.auth-side-panel-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 88px;
+}
+
+/* Navigation */
+
+.auth-side-panel-nav a {
+    text-decoration: none;
+    position: relative;
+    color: var(--primary-light);
+  }
+  
+  .auth-side-panel-nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .auth-side-panel-nav a:hover::after {
+    width: 100%;
+  }
+
+  .auth-side-panel-content{
+    text-align: center;
+  }
+
+  .auth-side-panel-content .team-members-img{
+    margin-bottom: 24px;
+
+  }
+
+  .auth-side-panel-logo{
+    margin-bottom: 28px;
+  }

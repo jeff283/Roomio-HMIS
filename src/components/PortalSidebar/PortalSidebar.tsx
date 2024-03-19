@@ -19,32 +19,7 @@ const PortalSidebar = ({ children }: Props) => {
           </NavLink>
         </div>
 
-        <div className="portal-sidemenu-items">
-          {children}
-          {/* <NavLink
-            className={({ isActive }) => {
-              return isActive
-                ? "portal-sidemenu-links portal-active-menu"
-                : "portal-sidemenu-links";
-            }}
-            to="/student-portal/dashboard"
-          >
-            <MdDashboard size="48" />
-            <span className="fz32 portal-sidemenu-text">Dashboard</span>
-          </NavLink>
-
-          <NavLink
-            className={({ isActive }) => {
-              return isActive
-                ? "portal-sidemenu-links portal-active-menu"
-                : "portal-sidemenu-links";
-            }}
-            to="/student-portal/rooms"
-          >
-            <FaDoorOpen size="48" />
-            <span className="fz32 portal-sidemenu-text">Rooms</span>
-          </NavLink> */}
-        </div>
+        <div className="portal-sidemenu-items">{children}</div>
       </div>
     </>
   );
