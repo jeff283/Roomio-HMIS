@@ -10,12 +10,10 @@ import AdminPortalStudents from "./pages/AdminPortalStudents/AdminPortalStudent"
 import AdminPortalUsers from "./pages/AdminPortalUsers/AdminPortalUsers";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/LogIn/Login";
-import TestPage from "./pages/TestPage/TestPage";
 import ProtectedRoutes from "./components/ProtectedRoutes/ProtectedRoutes";
 
 const Router = createBrowserRouter([
   { path: "/", element: <HomePage />, errorElement: <ErrorPage /> },
-  { path: "/test", element: <TestPage /> },
   { path: "/signup", element: <SignUp /> },
   { path: "/login", element: <Login /> },
   {
@@ -30,9 +28,18 @@ const Router = createBrowserRouter([
     path: "/admin-portal/dashboard",
     element: <ProtectedRoutes component={<AdminPortalDashboard />} />,
   },
-  { path: "/admin-portal/rooms", element: <AdminPortalRooms /> },
-  { path: "/admin-portal/students", element: <AdminPortalStudents /> },
-  { path: "/admin-portal/users", element: <AdminPortalUsers /> },
+  {
+    path: "/admin-portal/rooms",
+    element: <ProtectedRoutes component={<AdminPortalRooms />} />,
+  },
+  {
+    path: "/admin-portal/students",
+    element: <ProtectedRoutes component={<AdminPortalStudents />} />,
+  },
+  {
+    path: "/admin-portal/users",
+    element: <ProtectedRoutes component={<AdminPortalUsers />} />,
+  },
 ]);
 
 export default Router;

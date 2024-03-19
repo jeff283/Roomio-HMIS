@@ -1,51 +1,99 @@
-import "./AuthForm.css";
-// import User from "../../Interfaces/User";
-import { useForm, FieldValues } from "react-hook-form";
-// import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+// import "./AuthForm.css";
+// // import User from "../../Interfaces/User";
+// import { useForm, FieldValues } from "react-hook-form";
+// // import { useState } from "react";
+// import { NavLink, useNavigate } from "react-router-dom";
 
-import { db } from "../../config/firebase";
-import { auth } from "../../config/firebase";
+// import { db } from "../../config/firebase";
+// import { auth } from "../../config/firebase";
+// import {
+//   createUserWithEmailAndPassword,
+//   onAuthStateChanged,
+// } from "firebase/auth";
+// import { setDoc, doc } from "firebase/firestore";
+
+// const AuthFormSignUp = () => {
+//   const { register, handleSubmit, reset } = useForm();
+//   const navigate = useNavigate();
+
+//   const onSubmit = (data: FieldValues) => {
+//     const newUserData = {
+//       name: `${data.fname} ${data.lname}`,
+//       phone: data.phone,
+//       email: data.email,
+//       gender: data.gender,
+//       isAdmin: false,
+//       admNo: data.admNo,
+//       roomId: "",
+//     };
+
+//     createUserWithEmailAndPassword(auth, newUserData.email, data.password)
+//       .then((userRef) => {
+//         const userId = userRef.user.uid;
+//         const createUserData = { ...newUserData };
+//         setDoc(doc(db, "Users", userId), createUserData).catch((err) => {
+//           console.log(err);
+//         });
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//       });
+//     reset();
+//   };
+
+//   onAuthStateChanged(auth, (currentUser) => {
+//     if (currentUser && currentUser.uid) {
+//       navigate("/student-portal/dashboard");
+//     }
+//   });
+
+import "./AuthForm.css";
+import { useForm, FieldValues } from "react-hook-form";
+import { NavLink, useNavigate } from "react-router-dom";
+import { db, auth } from "../../config/firebase";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
 import { setDoc, doc } from "firebase/firestore";
+import { useEffect } from "react";
 
 const AuthFormSignUp = () => {
   const { register, handleSubmit, reset } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = (data: FieldValues) => {
-    const newUserData = {
-      name: `${data.fname} ${data.lname}`,
-      phone: data.phone,
-      email: data.email,
-      gender: data.gender,
-      isAdmin: false,
-      admNo: data.admNo,
-      roomId: "",
-    };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser && currentUser.uid) {
+        navigate("/student-portal/dashboard");
+      }
+    });
+    return unsubscribe;
+  }, [navigate]);
 
-    createUserWithEmailAndPassword(auth, newUserData.email, data.password)
-      .then((userRef) => {
-        const userId = userRef.user.uid;
-        const createUserData = { ...newUserData };
-        setDoc(doc(db, "Users", userId), createUserData).catch((err) => {
-          console.log(err);
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    reset();
-  };
-
-  onAuthStateChanged(auth, (currentUser) => {
-    if (currentUser && currentUser.uid) {
-      navigate("/student-portal/dashboard");
+  const onSubmit = async (data: FieldValues) => {
+    try {
+      const newUserCredential = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+      const userId = newUserCredential.user.uid;
+      const userData = {
+        name: `${data.fname} ${data.lname}`,
+        phone: data.phone,
+        email: data.email,
+        gender: data.gender,
+        isAdmin: false,
+        admNo: data.admNo,
+        roomId: "",
+      };
+      await setDoc(doc(db, "Users", userId), userData);
+      reset();
+    } catch (error) {
+      console.error(error);
     }
-  });
+  };
 
   return (
     <div>

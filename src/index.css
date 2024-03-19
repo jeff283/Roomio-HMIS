@@ -44,6 +44,10 @@ body {
 
 /* Font Sizes */
 
+.fz64{
+  font-size: 64px;
+}
+
 .fz56{
   font-size: 56px;
 }

@@ -1,0 +1,199 @@
+
+/* CSS Variables */
+:root {
+    --primary-color: #1E3738;
+    --secondary-color: #F6FBF6;
+    --tertiary-color: #5C5C5C;
+    --primary-light: #FFFFFF;
+    --secondary-dark: #101010;
+    --light-border: #1e373880;
+}
+
+.homepage-container{
+    background-color: var(--secondary-color);
+}
+
+    
+.navbar-home-container{
+    width: 100vw;
+    /* height: 100%; */
+    height: 60px;
+    background-color: var(--primary-color);
+    top: 0;
+    position: sticky;
+}
+
+/* HERP */
+
+.hero-section{
+    height: 100vh;
+    background-color: var(--primary-color);
+    padding: 0 72px;
+    padding-top: 56px;
+    color: var(--primary-light);
+    text-align: center;
+
+}
+
+.hero-subtitle{
+    margin-bottom: 24px;
+}
+
+.hero-cta-btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+.hero-cta-btn-container{
+    width: 20%;
+}
+
+/* ROOM SECTION */
+
+.room-section{
+    padding: 56px 72px;
+    padding-top: 32px;
+}
+
+.room {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.room-img{
+    margin-right: 100px;
+}
+
+.room-desc{
+    padding: 16px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-desc .room-price{
+    display: flex;
+    align-items: center;
+}
+
+.room-features{
+    display: flex;
+}
+
+.room-cta-btns{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.room-cta-btn{
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: #F6FBF6;
+    border: 2px solid #1E3738;
+    background-color: #1E3738;
+    border-radius: 4px;
+    padding: 4px  ;
+    width: 32px;
+
+}
+
+.room-cta-btn:hover{
+    background-color: #F6FBF6 ;
+    border: 2px solid #1E3738;
+    color: #1E3738;
+}
+
+.room-cta-btn-dark{
+    color: #1E3738;
+    background-color: #F6FBF6;
+    border: 2px solid #1E3738;
+}
+
+.room-cta-btn-dark:hover{
+    color: #F6FBF6;
+    background-color: #1E3738 ;
+    border: 2px solid #1E3738;
+}
+
+.room-price {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.room-features{
+    display: flex;
+    flex-direction: column;
+}
+
+.room-feature{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+
+/* ABOUT US SECTION */
+
+.about-section{
+    background-color: var(--primary-color);
+    color: var(--primary-light);
+    height: 800px;
+    padding: 24px 72px;
+}
+
+.about-content{
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-content-grid{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-content-card{
+    border-radius: 30px;
+    padding: 48px 32px;
+    max-width: 550px;
+    height: 240px;
+    margin-right: 48px;
+    color: var(--secondary-dark);
+    background-color: var(--secondary-color);
+}
+
+
+.contactus-section{
+    padding: 48px 72px;
+    height: 850px;
+    width: 100%;
+}
+
+.contact-sidepanel{
+    padding: 24px 8px;
+    text-align: center;
+    height: 700px;
+    width: 500px;
+    background-color: var(--primary-color);
+    color: var(--primary-light);
+    border-radius: 30px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+}

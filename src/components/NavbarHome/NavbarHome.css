@@ -1,0 +1,102 @@
+
+/* CSS Variables */
+:root {
+    --primary-color: #1E3738;
+    --secondary-color: #F6FBF6;
+    --tertiary-color: #5C5C5C;
+    --primary-light: #FFFFFF;
+    --secondary-dark: #101010;
+    --light-border: #1e373880;
+    }
+
+.navbar-holder-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 72px;
+    height: 60px;
+}
+
+.navbar-logo{
+    height: 100%;
+}
+
+.navbar-logo img{
+    height: 56px;
+}
+
+.navbar-links{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    position: relative;
+    color: var(--primary-light);
+}
+
+.navbar-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out;
+}
+
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+.navbar-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+} 
+
+.navbar-btn a{
+    text-decoration: none;
+    color: var(--primary-light);
+}
+
+.navbar-btn-shared{
+    padding: 0 20px;
+    border-radius: 8px;
+}
+
+.navbar-login{
+    border: 1px solid var(--primary-light);
+}
+
+.navbar-login:hover{
+    background-color: var(--secondary-color);
+}
+
+.navbar-login a:hover{
+    color: var(--primary-color);
+}
+
+.navbar-signup{
+    border: 1px solid var(--primary-light);
+    background-color: var(--secondary-color);
+    
+}
+
+.navbar-signup a{
+    color: var(--primary-color);
+}
+
+.navbar-signup:hover{
+    background-color: var(--primary-color);
+}
+
+.navbar-signup a:hover{
+    color: var(--secondary-color);
+}
