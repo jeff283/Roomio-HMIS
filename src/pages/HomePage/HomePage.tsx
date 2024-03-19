@@ -14,6 +14,14 @@ import singleRoomImg from "../../assets/images//singleRoom.png";
 import quadRoomImg from "../../assets/images/quadRoom.png";
 import whyUsImg from "../../assets/images/whyUs.png";
 import TeamImg from "../../assets/images/AuthPageImg.png";
+import ContactUs from "../../components/ContactUs/ContactUs";
+
+// SVGs
+
+import roomioDarkLogo from "../../assets/SVGs/RoomioDarkLogo.svg";
+import facebookLogo from "../../assets/SVGs/facebook.svg";
+import twitterLogo from "../../assets/SVGs/twitter.svg";
+import instagramLogo from "../../assets/SVGs/instagram.svg";
 
 const HomePage = () => {
   return (
@@ -246,18 +254,84 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div id="contact" className="contactus-section debug-1">
-        <div className="title fz48 poppins-bold mb-4 ">Talk to Us</div>
-        <div className="contact-sidepanel debug-1">
-          <div className="contact-img">
-            <img src={TeamImg} alt="Team Image" />
-          </div>
-          <div className="contact-details fz24  ">
-            <div className="physical-address">
-              P.O. Box 52428 - 00200, Haile Selassie Avenue, Nairobi, Kenya
+      <div id="contact" className="contactus-section">
+        <div>
+          <div className="title fz48 poppins-bold mb-3 ">Talk to Us</div>
+          <div className="contact-sidepanel ">
+            <div className="contact-img">
+              <img src={TeamImg} alt="Team Image" />
             </div>
-            <div className="office-phone">Tel: +254(020) 2219929, 3343672</div>
-            <div className="office-email">info@roomio.com</div>
+            <div className="contact-details fz24  ">
+              <div className="physical-address">
+                P.O. Box 52428 - 00200, Haile Selassie Avenue, Nairobi, Kenya
+              </div>
+              <div className="office-phone">
+                Tel: +254(020) 2219929, 3343672
+              </div>
+              <div className="office-email">info@roomio.com</div>
+            </div>
+          </div>
+        </div>
+        <div className="contact-form-container">
+          <ContactUs />
+        </div>
+      </div>
+      <div id="footer" className="footer-section">
+        <div className="footer-container fz24">
+          <div className="links-container">
+            <div className="links-title fz32 poppins-semibold mb-2">Links</div>
+            <div className="links-body">
+              <NavLink className="link" to="#home">
+                Home
+              </NavLink>
+              <NavLink className="link" to="#room">
+                Rooms
+              </NavLink>
+              <NavLink className="link" to="#about">
+                About Us
+              </NavLink>
+              <NavLink className="link" to="#contact">
+                Contact Us
+              </NavLink>
+            </div>
+          </div>
+          <div className="branding-container">
+            <div className="roomio-brand">
+              <img src={roomioDarkLogo} alt="Roomio Logo" />
+            </div>
+            <div className="sm-brands">
+              <div className="sm-title mb-3">Follow Us</div>
+              <div className="sm-links-container">
+                <div className="facebook">
+                  <img src={facebookLogo} alt="Facebook Logo" />
+                </div>
+                <div className="twitter">
+                  <img src={twitterLogo} alt="Twitter Logo" />
+                </div>
+                <div className="instagram">
+                  <img src={instagramLogo} alt="Instagram Logo" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="portals-container">
+            <div className="portals-title fz32 poppins-semibold mb-2">
+              Portals
+            </div>
+            <div className="portal-links-container">
+              <NavLink
+                className="student-portal-link"
+                to="/student-portal/dashboard"
+              >
+                Student Portal
+              </NavLink>
+              <NavLink
+                className="admin-portal-link"
+                to="/admin-portal/dashboard"
+              >
+                Admin Portal
+              </NavLink>
+            </div>
           </div>
         </div>
       </div>

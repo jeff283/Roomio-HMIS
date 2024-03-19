@@ -52,6 +52,18 @@
 .navbar-links a:hover::after {
     width: 100%;
 }
+/* 
+.active-navbar-links::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+
+} */
 
 .navbar-btn{
     display: flex;

@@ -1,0 +1,84 @@
+/* CSS Variables */
+:root {
+    --primary-color: #1E3738;
+    --secondary-color: #F6FBF6;
+    --tertiary-color: #5C5C5C;
+    --primary-light: #FFFFFF;
+    --secondary-dark: #101010;
+    --light-border: #1e373880;
+    }
+
+.contact-form-contain{
+    width: 55rem;
+    height: 50rem;
+    border-radius: 40px ;
+    padding: 24px 72px;
+    border: 1px solid var(--light-border);
+}
+
+
+
+.form-row{
+    display: flex;
+    margin-bottom: 16px;
+
+}
+
+.contact-form-input-container label{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.contact-form-input-container input{
+    font-size: 22px;
+    padding: 4px 24px;
+    border: none;
+    border-bottom: 2px solid var(--light-border);
+}
+
+
+.form-col .contact-form-input-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+   
+}
+
+
+
+.form-submit-btn button {
+    border-radius: 8px;
+    padding: 8px 48px;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--primary-light);
+}
+
+.form-submit-btn button:hover{
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.contact-form-options{
+    display: flex;
+    align-items: center;
+}
+
+.contact-form-options a{
+    text-decoration: none;
+    color: var(--secondary-dark);
+    cursor: pointer;
+    padding-left: 8px;
+
+}
+
+.contact-form-input-container textarea{
+    border-radius: 8px;
+    font-size: 22px;
+    padding: 4px 24px;
+    border: 2px solid var(--light-border);
+
+
+}

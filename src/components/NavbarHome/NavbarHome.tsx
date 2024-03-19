@@ -26,6 +26,10 @@ const NavbarHome = () => {
               event.preventDefault();
               switchPages("home");
             }}
+            // className="active-navbar-links"
+            // className={({ isActive }) => {
+            //   return isActive ? "active-navbar-links" : "";
+            // }}
           >
             Home
           </NavLink>
