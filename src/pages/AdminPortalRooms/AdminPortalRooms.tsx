@@ -116,7 +116,7 @@ const AdminPortalRooms = () => {
           <AdminPortalSidebar />
 
           <div className="pages-content-body">
-            <PortalTopBar pageTitle="Rooms" pageUser="User" />
+            <PortalTopBar pageTitle="Rooms" />
             <div className="admin-top-btn-container">
               <ButtonCustom dark={true} onBtnClick={() => setFormSubmit(true)}>
                 Add Room
@@ -143,6 +143,7 @@ const AdminPortalRooms = () => {
                 setRoom({} as Room);
                 // setRoom(room);
                 isRoomUpdate ? updateRoom(room) : createRoom(room);
+                // (room);
                 setRoomUpdate(false);
 
                 // createRoom(room);

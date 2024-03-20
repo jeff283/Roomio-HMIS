@@ -220,7 +220,7 @@ const StudentPortalRooms = () => {
           <StudentPortalSidebar />
 
           <div className="pages-content-body">
-            <PortalTopBar pageTitle="Rooms" pageUser={fetchedUser.name} />
+            <PortalTopBar pageTitle="Rooms" />
 
             <div className="pages-content-section  ">
               <div className="rooms-content-section ">

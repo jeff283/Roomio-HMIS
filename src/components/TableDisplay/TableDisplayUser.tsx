@@ -23,7 +23,7 @@ const TableDisplayUser = ({ usersData, onListDblClick }: Props) => {
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
                 <th scope="col">Gender</th>
-                <th scope="col">User ID</th>
+                {/* <th scope="col">User ID</th> */}
               </tr>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@ const TableDisplayUser = ({ usersData, onListDblClick }: Props) => {
                   <td>{user.phone}</td>
                   <td>{user.email}</td>
                   <td>{user.gender}</td>
-                  <td>{user.id}</td>
+                  {/* <td>{user.id}</td> */}
                 </tr>
               ))}
             </tbody>

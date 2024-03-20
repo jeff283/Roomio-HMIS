@@ -123,7 +123,6 @@ const StudentPortalDashboard = () => {
         }
       }
     });
-    // getRoomList();
 
     getRoomList();
 
@@ -142,7 +141,7 @@ const StudentPortalDashboard = () => {
       <div className="d-flex">
         <StudentPortalSidebar />
         <div className="pages-content-body">
-          <PortalTopBar pageTitle="Dashboard" pageUser={fetchedUser.name} />
+          <PortalTopBar pageTitle="Dashboard" />
           <div className="student-dashboard-content ">
             <div className="big-content sdc-spacing ">
               <div className="top-content content-card ">

@@ -4,7 +4,8 @@ import User from "../../Interfaces/User";
 
 interface Props {
   userData?: User;
-  onFormSubmit: () => void;
+  formUpdateState: boolean;
+  onFormSubmit: (user: User) => void;
   onOffClick: () => void;
 }
 
@@ -19,16 +20,31 @@ const emptyUserData: User = {
   isAdmin: false,
 };
 const TableAddUserForm = ({
+  userData = emptyUserData,
   onOffClick,
   onFormSubmit,
-  userData = emptyUserData,
+  formUpdateState,
 }: Props) => {
   const { register, handleSubmit, reset } = useForm();
 
+  console.log(formUpdateState);
+
   const onSubmit = (data: FieldValues) => {
-    onFormSubmit();
-    console.log("Form Submit:");
-    console.log(data);
+    const userTemplateData: User = {
+      id: "",
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      gender: data.gender,
+      admNo: "",
+      roomId: "",
+      isAdmin: data.isAdmin,
+      password: data.password,
+    };
+
+    onFormSubmit(userTemplateData);
+    // console.log("Form Submit:");
+    // console.log(data);
     reset();
   };
   return (
@@ -111,6 +127,23 @@ const TableAddUserForm = ({
               </option>
             </select>
           </div>
+
+          {!formUpdateState && (
+            <div className="mb-3">
+              <label className="form-label" htmlFor="password">
+                Password
+              </label>
+              <input
+                {...register("password")}
+                // value={userData.password}
+                id="password"
+                className="form-control"
+                type="password"
+                required
+              />
+            </div>
+          )}
+
           <div className="form-submit">
             <button type="submit" className="submit-btn">
               Submit
