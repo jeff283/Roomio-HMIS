@@ -19,12 +19,14 @@ import {
 } from "firebase/firestore";
 import User from "../../Interfaces/User";
 import Room from "../../Interfaces/Room";
+import { useNavigate } from "react-router-dom";
 
 const StudentPortalRooms = () => {
   const [pay, setPay] = useState(false);
   const [clickRoomType, setClickRoomType] = useState("");
   const [fetchedUser, setfetchedUser] = useState<User>({} as User);
   const [roomList, setRoomList] = useState<Room[]>({} as Room[]);
+  const navigate = useNavigate();
 
   const roomCollectionRef = collection(db, "Rooms");
   // const userCollectionRef = collection(db, "Users");
@@ -77,6 +79,7 @@ const StudentPortalRooms = () => {
 
   const handleRoomPayment = () => {
     if (fetchedUser.roomId) {
+      alert("You have a Room Assigned");
       console.log("User has room");
       return;
     }
@@ -160,6 +163,7 @@ const StudentPortalRooms = () => {
         updateUser(updatedUser);
       }
     }
+    navigate("/student-portal/dashboard");
   };
 
   const getRoomList = () => {

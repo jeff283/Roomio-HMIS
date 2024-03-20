@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../../config/firebase";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+// import { useLocation } from "react-router-dom";
 
 const StudentPortalDashboard = () => {
   const [fetchedUser, setfetchedUser] = useState<User>({} as User);
@@ -64,15 +65,19 @@ const StudentPortalDashboard = () => {
   };
 
   const findUserRoom = () => {
+    console.log("fetchedUser.id: ", fetchedUser.id);
     if (fetchedUser.id) {
       const searchString = fetchedUser.id;
       const roomWithSearchString = roomList.find(
         (room) => room.occupants && room.occupants.includes(searchString)
       );
+      console.log("roomWithSearchString: ", roomWithSearchString);
       if (roomWithSearchString) {
-        // console.log(roomWithSearchString);
+        console.log(roomWithSearchString);
 
         setUserRoom(roomWithSearchString);
+        // console.log("roomWithSearchString: ", roomWithSearchString);
+        // console.log("User Room: ", userRoom);
       } else {
         console.log("Room not found");
       }
@@ -115,11 +120,7 @@ const StudentPortalDashboard = () => {
             roomId: userData.roomId,
           };
           setfetchedUser(allUserData);
-          // console.log("allUserData: ", allUserData);
         }
-      } else {
-        // User is signed out
-        setfetchedUser({} as User);
       }
     });
     // getRoomList();
@@ -130,9 +131,11 @@ const StudentPortalDashboard = () => {
   }, []);
 
   useEffect(() => {
+    console.log("Loaded on Room List");
+
     findUserRoom();
     findUserRoomates();
-  }, [roomList]);
+  }, [fetchedUser]);
 
   return (
     <>
@@ -176,7 +179,7 @@ const StudentPortalDashboard = () => {
 
                 <h4 className="content-title fz24">Room Information</h4>
 
-                {userRoom ? (
+                {Object.keys(userRoom).length > 0 ? (
                   <div className="info-card ">
                     <div className="info-card-item ">
                       <span className="light-text">Room Number</span>
@@ -200,7 +203,9 @@ const StudentPortalDashboard = () => {
                     </div>
                   </div>
                 ) : (
-                  <h4 className="content-title fz24 tac">No Room Assigned</h4>
+                  <h1 className="content-title light-text tac mt-5">
+                    No Room Assigned
+                  </h1>
                 )}
               </div>
             </div>
@@ -216,29 +221,38 @@ const StudentPortalDashboard = () => {
                     ))}
                   </div>
                 ) : (
-                  <h3>You have No Roommates</h3>
+                  <h3 className="light-text tac mt-4">You have No Roommates</h3>
                 )}
               </div>
               <div className="bottom-content content-card ">
                 <h3 className="content-title fz32">Notifications</h3>
-                <div className="notification-card ">
-                  <div className="notification-title ">Team Building</div>
-                  <div className="notification-content ">
-                    Roomies, mark your calendars! We're hosting a fun team
-                    building event on April 25th to help you connect with your
-                    neighbors and build teamwork skills through awesome
-                    activities and challenges. Space is limited, so RSVP by
-                    April 20th to join the fun! See you there!
+
+                {Object.keys(userRoom).length > 0 ? (
+                  <div>
+                    <div className="notification-card ">
+                      <div className="notification-title ">Team Building</div>
+                      <div className="notification-content ">
+                        Roomies, mark your calendars! We're hosting a fun team
+                        building event on April 25th to help you connect with
+                        your neighbors and build teamwork skills through awesome
+                        activities and challenges. Space is limited, so RSVP by
+                        April 20th to join the fun! See you there!
+                      </div>
+                    </div>
+                    <div className="notification-card ">
+                      <div className="notification-title ">Booking</div>
+                      <div className="notification-content ">
+                        Don't miss out, Roomies! ⏰ The clock is ticking to book
+                        your perfect dorm for the upcoming semester. Head over
+                        to the Rooms page now and browse all available options!
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="notification-card ">
-                  <div className="notification-title ">Booking</div>
-                  <div className="notification-content ">
-                    Don't miss out, Roomies! ⏰ The clock is ticking to book
-                    your perfect dorm for the upcoming semester. Head over to
-                    the Rooms page now and browse all available options!
-                  </div>
-                </div>
+                ) : (
+                  <h3 className="light-text tac mt-5">
+                    You have No Notifications
+                  </h3>
+                )}
               </div>
             </div>
           </div>
