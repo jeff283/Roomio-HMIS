@@ -3,13 +3,13 @@ import "./AdminPortalStudents.css";
 
 import AdminPortalSidebar from "../../components/AdminPortalSidebar/AdminPortalSidebar";
 import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
-// import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
+
 import TableDisplayStudent from "../../components/TableDisplay/TableDisplayStudent";
 import TableAddStudentForm from "../../components/TableAddForm/TableAddStudentForm";
 import { useEffect, useState } from "react";
 
 import User from "../../Interfaces/User";
-// import userData from "../../data/userData";
+
 import { useNavigate } from "react-router-dom";
 import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
@@ -28,7 +28,6 @@ const AdminPortalStudents = () => {
     setClickUser(user);
     setFormSubmit(true);
     setUserUpdate(true);
-    // console.log(user);
   };
 
   const findUserById = (userId: string) => {
@@ -68,7 +67,6 @@ const AdminPortalStudents = () => {
         email: formUser.email,
         gender: formUser.gender,
       };
-      // console.log(updatedUser);
 
       if (updatedUser.id) {
         const userDoc = doc(db, "Users", updatedUser.id);
@@ -90,14 +88,6 @@ const AdminPortalStudents = () => {
     getUserList();
   }, []);
 
-  // const [isFormSubmit, setFormSubmit] = useState(false);
-  // const [user, setUser] = useState<User>({} as User);
-
-  // const handleListDblClick = (user: User) => {
-  //   setUser(user);
-  //   setFormSubmit(true);
-  //   console.log(user);
-  // };
   return (
     <>
       <div className="admin-portal-list-body">

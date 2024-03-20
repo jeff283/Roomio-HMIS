@@ -4,25 +4,14 @@ import "../AdminPortalRooms/AdminPortalRooms.css";
 import { useEffect, useState } from "react";
 import AdminPortalSidebar from "../../components/AdminPortalSidebar/AdminPortalSidebar";
 import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
-// import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
 
 import TableDisplayUser from "../../components/TableDisplay/TableDisplayUser";
 import TableAddUserForm from "../../components/TableAddForm/TableAddUserForm";
 import User from "../../Interfaces/User";
 
-import {
-  collection,
-  // deleteDoc,
-  doc,
-  getDocs,
-  // setDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
-// import Room from "../../Interfaces/Room";
-// import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-// import { deleteUser } from "firebase/auth";
 
 const AdminPortalUsers = () => {
   const [isFormSubmit, setFormSubmit] = useState(false);
@@ -96,25 +85,6 @@ const AdminPortalUsers = () => {
     }
   };
 
-  // // DELETE User
-  // const handleDeleteUser = (user: User) => {
-  //   console.log(user);
-
-  //   if (user.id) {
-  //     // deleteUser("5FYjZRIPr5WDHLXU7PR4K0KSJDc2");
-  //     const roomDoc = doc(db, "Rooms", user.id);
-  //     deleteDoc(roomDoc)
-  //       .then(() => {
-  //         getUserList();
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   } else {
-  //     console.error("No Room ID was provided");
-  //   }
-  // };
-
   useEffect(() => {
     getUserList();
   }, []);
@@ -136,9 +106,6 @@ const AdminPortalUsers = () => {
               <TableDisplayUser
                 usersData={allUsers}
                 onListDblClick={(user) => handleListDblClick(user)}
-                // onDeleteBtnClick={(user) => {
-                //   handleDeleteUser(user);
-                // }}
               />
             </div>
           </div>

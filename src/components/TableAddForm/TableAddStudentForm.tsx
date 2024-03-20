@@ -34,12 +34,10 @@ const TableAddStudentForm = ({
       admNo: data.admNo,
       roomId: data.roomId,
       isAdmin: data.isAdmin,
-      // password: data.password,
     };
 
     onFormSubmit(userTemplateData);
-    // console.log("Form Submit:");
-    // console.log(data);
+
     reset();
   };
   return (

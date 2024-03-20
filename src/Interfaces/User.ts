@@ -7,7 +7,6 @@ interface User {
   isAdmin: boolean;
   admNo: string;
   roomId?: string;
-  password?: string;
 }
 
 export default User;
