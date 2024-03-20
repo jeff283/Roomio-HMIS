@@ -2,8 +2,6 @@ import User from "../../Interfaces/User";
 
 import "./TableDisplay.css";
 
-import { MdDelete } from "react-icons/md";
-
 interface Props {
   usersData: User[];
   onListDblClick: (user: User) => void;
