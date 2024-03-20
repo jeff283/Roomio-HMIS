@@ -9,9 +9,8 @@ import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
 import TableDisplayUser from "../../components/TableDisplay/TableDisplayUser";
 import TableAddUserForm from "../../components/TableAddForm/TableAddUserForm";
 import User from "../../Interfaces/User";
-import userData from "../../data/userData";
+
 import {
-  addDoc,
   collection,
   doc,
   getDocs,
@@ -19,7 +18,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "../../config/firebase";
-import Room from "../../Interfaces/Room";
+// import Room from "../../Interfaces/Room";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 // import { onAuthStateChanged } from "firebase/auth";
 
