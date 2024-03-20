@@ -1,16 +1,22 @@
+// CSS
 import "../PagesGlobal.css";
 import "../AdminPortalRooms/AdminPortalRooms.css";
 
-import { useEffect, useState } from "react";
+// COMPONENTS
 import AdminPortalSidebar from "../../components/AdminPortalSidebar/AdminPortalSidebar";
 import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
 import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
-
 import TableDisplayRoom from "../../components/TableDisplay/TableDisplayRoom";
 import TableAddRoomForm from "../../components/TableAddForm/TableAddRoomForm";
-import Room from "../../Interfaces/Room";
-// import roomData from "../../data/roomData";
 
+// INTERFACES
+import Room from "../../Interfaces/Room";
+
+// CONFIGS
+import { db } from "../../config/firebase";
+
+// LIBRARY
+import { useEffect, useState } from "react";
 import {
   addDoc,
   collection,
@@ -18,7 +24,6 @@ import {
   getDocs,
   updateDoc,
 } from "firebase/firestore";
-import { db } from "../../config/firebase";
 
 const AdminPortalRooms = () => {
   const [isFormSubmit, setFormSubmit] = useState(false);
@@ -111,7 +116,7 @@ const AdminPortalRooms = () => {
           <AdminPortalSidebar />
 
           <div className="pages-content-body">
-            <PortalTopBar pageTitle="Rooms" />
+            <PortalTopBar pageTitle="Rooms" pageUser="User" />
             <div className="admin-top-btn-container">
               <ButtonCustom dark={true} onBtnClick={() => setFormSubmit(true)}>
                 Add Room

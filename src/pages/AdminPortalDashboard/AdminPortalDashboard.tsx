@@ -11,7 +11,7 @@ const AdminPortalDashboard = () => {
         <AdminPortalSidebar />
 
         <div className="pages-content-body">
-          <PortalTopBar pageTitle="Dashboard" />
+          <PortalTopBar pageTitle="Dashboard" pageUser="User" />
           AdminPortalDashboard
         </div>
       </div>

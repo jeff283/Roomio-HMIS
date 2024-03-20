@@ -27,7 +27,7 @@ const AdminPortalStudents = () => {
           <AdminPortalSidebar />
 
           <div className="pages-content-body">
-            <PortalTopBar pageTitle="Students" />
+            <PortalTopBar pageTitle="Students" pageUser="User" />
             <div className="admin-top-btn-container">
               <ButtonCustom dark={true} onBtnClick={() => setFormSubmit(true)}>
                 Add Student
