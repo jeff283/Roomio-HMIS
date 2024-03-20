@@ -19,7 +19,7 @@ const TableDisplayStudent = ({ usersData, onListDblClick }: Props) => {
           <table className="table table-hover">
             <thead className="table-title">
               <tr>
-                <th scope="col">Student ID</th>
+                {/* <th scope="col">Student ID</th> */}
                 <th scope="col">Name</th>
                 <th scope="col">Admission Number</th>
                 <th scope="col">Room</th>
@@ -36,7 +36,7 @@ const TableDisplayStudent = ({ usersData, onListDblClick }: Props) => {
                       onDoubleClick={() => handleDblClick(user)}
                       key={user.id}
                     >
-                      <td>{user.id}</td>
+                      {/* <td>{user.id}</td> */}
                       <td>{user.name}</td>
                       <td>{user.admNo}</td>
                       <td>{user.roomId}</td>

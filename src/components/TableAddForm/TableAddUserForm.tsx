@@ -1,7 +1,6 @@
 import { useForm, FieldValues } from "react-hook-form";
 import "./TableAddForm.css";
 import User from "../../Interfaces/User";
-
 interface Props {
   userData?: User;
   formUpdateState: boolean;
@@ -39,7 +38,7 @@ const TableAddUserForm = ({
       admNo: "",
       roomId: "",
       isAdmin: data.isAdmin,
-      password: data.password,
+      // password: data.password,
     };
 
     onFormSubmit(userTemplateData);
@@ -128,7 +127,7 @@ const TableAddUserForm = ({
             </select>
           </div>
 
-          {!formUpdateState && (
+          {/* {!formUpdateState && (
             <div className="mb-3">
               <label className="form-label" htmlFor="password">
                 Password
@@ -142,7 +141,7 @@ const TableAddUserForm = ({
                 required
               />
             </div>
-          )}
+          )} */}
 
           <div className="form-submit">
             <button type="submit" className="submit-btn">

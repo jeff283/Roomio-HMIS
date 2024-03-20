@@ -4,7 +4,7 @@ import "../AdminPortalRooms/AdminPortalRooms.css";
 import { useEffect, useState } from "react";
 import AdminPortalSidebar from "../../components/AdminPortalSidebar/AdminPortalSidebar";
 import PortalTopBar from "../../components/PortalTopBar/PortalTopBar";
-import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
+// import ButtonCustom from "../../components/ButtonCustom/ButtonCustom";
 
 import TableDisplayUser from "../../components/TableDisplay/TableDisplayUser";
 import TableAddUserForm from "../../components/TableAddForm/TableAddUserForm";
@@ -12,21 +12,25 @@ import User from "../../Interfaces/User";
 
 import {
   collection,
+  // deleteDoc,
   doc,
   getDocs,
-  setDoc,
+  // setDoc,
   updateDoc,
 } from "firebase/firestore";
-import { auth, db } from "../../config/firebase";
+import { db } from "../../config/firebase";
 // import Room from "../../Interfaces/Room";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { onAuthStateChanged } from "firebase/auth";
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+// import { deleteUser } from "firebase/auth";
 
 const AdminPortalUsers = () => {
   const [isFormSubmit, setFormSubmit] = useState(false);
   const [isUserUpdate, setUserUpdate] = useState(false);
   const [clickUser, setClickUser] = useState<User>({} as User);
   const [allUsers, setAllUsers] = useState<User[]>({} as User[]);
+
+  const navigate = useNavigate();
 
   const userCollectionRef = collection(db, "Users");
 
@@ -60,33 +64,8 @@ const AdminPortalUsers = () => {
     }
   };
 
-  const createUser = async (formUser: User) => {
-    if (formUser.password) {
-      try {
-        const createdUser = {
-          isAdmin: formUser.isAdmin,
-          name: formUser.name,
-          phone: formUser.phone,
-          email: formUser.email,
-          gender: formUser.gender,
-          admNo: "0",
-          roomId: "",
-        };
-
-        const newUserCredential = await createUserWithEmailAndPassword(
-          auth,
-          formUser.email,
-          formUser.password
-        );
-
-        const newUserId = newUserCredential.user.uid;
-
-        await setDoc(doc(db, "Users", newUserId), createdUser);
-        getUserList();
-      } catch (error) {
-        console.error(error);
-      }
-    }
+  const createUser = async () => {
+    navigate("/signup");
   };
 
   const updateUser = (formUser: User) => {
@@ -117,6 +96,25 @@ const AdminPortalUsers = () => {
     }
   };
 
+  // // DELETE User
+  // const handleDeleteUser = (user: User) => {
+  //   console.log(user);
+
+  //   if (user.id) {
+  //     // deleteUser("5FYjZRIPr5WDHLXU7PR4K0KSJDc2");
+  //     const roomDoc = doc(db, "Rooms", user.id);
+  //     deleteDoc(roomDoc)
+  //       .then(() => {
+  //         getUserList();
+  //       })
+  //       .catch((err) => {
+  //         console.error(err);
+  //       });
+  //   } else {
+  //     console.error("No Room ID was provided");
+  //   }
+  // };
+
   useEffect(() => {
     getUserList();
   }, []);
@@ -130,14 +128,17 @@ const AdminPortalUsers = () => {
           <div className="pages-content-body">
             <PortalTopBar pageTitle="Users" />
             <div className="admin-top-btn-container">
-              <ButtonCustom dark={true} onBtnClick={() => setFormSubmit(true)}>
+              {/* <ButtonCustom dark={true} onBtnClick={() => setFormSubmit(true)}>
                 Add User
-              </ButtonCustom>
+              </ButtonCustom> */}
             </div>
             <div className="admin-table">
               <TableDisplayUser
                 usersData={allUsers}
                 onListDblClick={(user) => handleListDblClick(user)}
+                // onDeleteBtnClick={(user) => {
+                //   handleDeleteUser(user);
+                // }}
               />
             </div>
           </div>
@@ -153,7 +154,7 @@ const AdminPortalUsers = () => {
               onFormSubmit={(user) => {
                 setFormSubmit(false);
                 setClickUser({} as User);
-                isUserUpdate ? updateUser(user) : createUser(user);
+                isUserUpdate ? updateUser(user) : createUser();
                 setUserUpdate(false);
               }}
               userData={clickUser}

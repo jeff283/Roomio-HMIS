@@ -4,7 +4,7 @@ import User from "../../Interfaces/User";
 
 interface Props {
   userData?: User;
-  onFormSubmit: () => void;
+  onFormSubmit: (user: User) => void;
   onOffClick: () => void;
 }
 
@@ -25,9 +25,21 @@ const TableAddStudentForm = ({
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data: FieldValues) => {
-    onFormSubmit();
-    console.log("Form Submit:");
-    console.log(data);
+    const userTemplateData: User = {
+      id: "",
+      name: data.name,
+      phone: data.phone,
+      email: data.email,
+      gender: data.gender,
+      admNo: data.admNo,
+      roomId: data.roomId,
+      isAdmin: data.isAdmin,
+      // password: data.password,
+    };
+
+    onFormSubmit(userTemplateData);
+    // console.log("Form Submit:");
+    // console.log(data);
     reset();
   };
   return (
@@ -71,7 +83,6 @@ const TableAddStudentForm = ({
               id="roomId"
               className="form-control"
               type="text"
-              required
             />
           </div>
           <div className="mb-3">

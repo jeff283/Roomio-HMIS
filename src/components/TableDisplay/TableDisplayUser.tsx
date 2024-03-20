@@ -2,12 +2,24 @@ import User from "../../Interfaces/User";
 
 import "./TableDisplay.css";
 
+import { MdDelete } from "react-icons/md";
+
 interface Props {
   usersData: User[];
   onListDblClick: (user: User) => void;
+  // onDeleteBtnClick: (user: User) => void;
 }
 
-const TableDisplayUser = ({ usersData, onListDblClick }: Props) => {
+const TableDisplayUser = ({
+  usersData,
+  onListDblClick,
+}: // onDeleteBtnClick,
+Props) => {
+  // const onClickDelete = (user: User) => {
+  //   // onDeleteBtnClick(user);
+  //   // console.log(user);
+  // };
+
   const handleDblClick = (user: User) => {
     onListDblClick(user);
   };
@@ -23,6 +35,7 @@ const TableDisplayUser = ({ usersData, onListDblClick }: Props) => {
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
                 <th scope="col">Gender</th>
+                {/* <th scope="col"></th> */}
                 {/* <th scope="col">User ID</th> */}
               </tr>
             </thead>
@@ -34,6 +47,13 @@ const TableDisplayUser = ({ usersData, onListDblClick }: Props) => {
                   <td>{user.phone}</td>
                   <td>{user.email}</td>
                   <td>{user.gender}</td>
+                  {/* <td>
+                    <MdDelete
+                      onClick={() => onClickDelete(user)}
+                      size={28}
+                      className="delete-btn"
+                    />
+                  </td> */}
                   {/* <td>{user.id}</td> */}
                 </tr>
               ))}

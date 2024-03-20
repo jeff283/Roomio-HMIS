@@ -40,3 +40,7 @@ tbody tr{
 .no-table-data-sub-title{
     font-size: 32px;
 }
+
+.delete-btn:hover{
+    color: red;
+}
