@@ -16,6 +16,7 @@ const Router = createBrowserRouter([
   { path: "/", element: <HomePage />, errorElement: <ErrorPage /> },
   { path: "/signup", element: <SignUp /> },
   { path: "/login", element: <Login /> },
+
   {
     path: "/student-portal/dashboard",
     element: <ProtectedRoutes component={<StudentPortalDashboard />} />,

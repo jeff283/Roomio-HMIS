@@ -94,6 +94,7 @@ body {
 
 .debug-3 {
   border: 1px solid blue;
+  
 }
 
 /* CSS Variables */
@@ -116,6 +117,7 @@ body {
 
 .light-border{
   color: var(--light-border);
+  
 }
 
 .tac {
