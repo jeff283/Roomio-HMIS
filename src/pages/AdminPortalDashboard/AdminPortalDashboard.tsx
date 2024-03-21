@@ -76,12 +76,10 @@ const AdminPortalDashboard = () => {
       const allTotal = totalSingle + totalDouble + totalQuad;
       const allTotalDivisible = allTotal !== 0 ? allTotal : 1; //Avoid Division by Zero
       const allOccupied = occupiedSingle + occupiedDouble + occupiedQuad;
-      const percentageOccupancy = (allOccupied / allTotalDivisible) * 100;
+      const percentageOccupancy = Math.round(
+        (allOccupied / allTotalDivisible) * 100
+      );
       setPcOccupancy(percentageOccupancy);
-      // console.log("allTotal: ", allTotal);
-      // console.log("allTotalDivisible: ", allTotalDivisible);
-      // console.log("allOccupied: ", allOccupied);
-      // console.log("percentageOccupancy: ", percentageOccupancy);
 
       const roomCountData: RoomCount[] = [
         {

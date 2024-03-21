@@ -56,8 +56,8 @@ const AdminPortalRooms = () => {
 
   const createRoom = (room: Room) => {
     addDoc(roomCollectionRef, room)
-      .then((docRef) => {
-        console.log(docRef.id);
+      .then(() => {
+        // console.log(docRef.id);
         getRoomList();
       })
       .catch((err) => {
