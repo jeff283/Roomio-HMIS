@@ -25,8 +25,11 @@ const AdminPortalStudents = () => {
   const userCollectionRef = collection(db, "Users");
 
   const handleListDblClick = (user: User) => {
+    // Setting User to be Edited
     setClickUser(user);
+    // Open Form
     setFormSubmit(true);
+    // Tell Form we Are Updating
     setUserUpdate(true);
   };
 
@@ -117,9 +120,13 @@ const AdminPortalStudents = () => {
                 setClickUser({} as User);
               }}
               onFormSubmit={(user) => {
+                // Closing Form
                 setFormSubmit(false);
+                // Removing User to be upadated
                 setClickUser({} as User);
+                // Handling Form Data
                 isUserUpdate ? updateUser(user) : createUser();
+                // We done Updating
                 setUserUpdate(false);
               }}
               userData={clickUser}
