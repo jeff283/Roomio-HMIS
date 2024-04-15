@@ -24,4 +24,4 @@ node_modules
 *.sw?
 
 #package-lock.json to avoid new project installation errors
-package-lock.json
+package-lock.json*
